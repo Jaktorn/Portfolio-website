@@ -32,11 +32,11 @@ const Home = () => {
       <div className="container home-page">
         <div className="text-zone">
           <h1>
-            <span className={letterClass} role="text">H</span>
-            <span className={`${letterClass} _12`} role="text">i,</span>
+            <span className={letterClass}>H</span>
+            <span className={`${letterClass} _12`}>i,</span>
             <br />
-            <span className={`${letterClass} _13`} role="text">I</span>
-            <span className={`${letterClass} _14`} role="text">'m</span>
+            <span className={`${letterClass} _13`}>I</span>
+            <span className={`${letterClass} _14`}>'m</span> &nbsp;
             <AnimatedLetters
               letterClass={letterClass}
               strArray={nameArray}
@@ -62,6 +62,7 @@ const Home = () => {
       <Loader type="pacman" />
     </>
   )
+
 }
 
 export default Home

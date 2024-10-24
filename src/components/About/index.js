@@ -37,18 +37,14 @@ const About = () => {
             />
           </h1>
           <p>
-            I'm a very ambitious front-end developer looking for a role in an
-            established IT company with the opportunity to work with the latest
-            technologies on challenging and diverse projects.
+          I'm a 4th-year student at King Mongkut's University of Technology North Bangkok (KMUTNB), 
+          majoring in Computer Electronic Engineering Technology at the College of Industrial Technology.
           </p>
           <p align="LEFT">
-            I'm quiet confident, naturally curious, and perpetually working on
-            improving my chops one design problem at a time.
+          I am interested in working in software engineering and web application development.
           </p>
           <p>
-            If I need to define myself in one sentence that would be a family
-            person, father of a beautiful daughter, a sports fanatic,
-            photography enthusiast, and tech-obsessed!!!
+          I'm a team player with solid leadership skills, ready to jump in and learn while working together.
           </p>
         </div>
 
