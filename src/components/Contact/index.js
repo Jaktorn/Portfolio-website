@@ -49,61 +49,64 @@ const Contact = () => {
   return (
     <>
       <div className="container contact-page">
-        <div className="left-side">
-          <div className="text-zone">
-            <h1>
-              <AnimatedLetters
-                letterClass={letterClass}
-                strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
-                idx={15}
-              />
-            </h1>
-  
-            <div className="contact-form">
-              <form ref={form} onSubmit={sendEmail}>
-                <ul>
-                  <li className="half">
-                    <input placeholder="Name" type="text" name="name" required />
-                  </li>
-                  <li className="half">
-                    <input
-                      placeholder="Email"
-                      type="email"
-                      name="email"
-                      required
-                    />
-                  </li>
-                  <li>
-                    <textarea
-                      placeholder="Message"
-                      name="message"
-                      required
-                    ></textarea>
-                  </li>
-                  <li>
-                    <input type="submit" className="flat-button" value="SEND" />
-                  </li>
-                </ul>
-              </form>
-            </div>
+        <div className="text-zone">
+          <h1>
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
+              idx={15}
+            />
+          </h1>
+          <div className="contact-form">
+            <form ref={form} onSubmit={sendEmail}>
+              <ul>
+                <li className="half">
+                  <input placeholder="Name" type="text" name="name" required />
+                </li>
+                <li className="half">
+                  <input
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                    required
+                  />
+                </li>
+                
+                <li>
+                  <textarea
+                    placeholder="Message"
+                    name="message"
+                    required
+                  ></textarea>
+                </li>
+                <li>
+                  <input type="submit" className="flat-button" value="SEND" />
+                </li>
+              </ul>
+            </form>
           </div>
         </div>
-  
-        <div className="right-side">
-          <div className="contact-icons">
-            <div className="icon-box">
-              <i className="fas fa-phone"></i>
-            </div>
-            <div className="icon-box">
-              <i className="fas fa-envelope"></i>
-            </div>
-          </div>
+        <div className="info-map">
+          บ้านเอื้องฟ้า
+          <br />
+          bangkok,
+          <br />
+          บ้านเอื้องฟ้า 218/2 ซอย วงศ์สว่าง 11 แขวงวงศ์สว่าง เขตบางซื่อ กรุงเทพมหานคร 10800 <br />
+          <br />
+          <span>jaktopn@gmail.com</span>
+        </div>
+        <div className="map-wrap">
+          <MapContainer center={[13.82956, 100.53206]} zoom={13}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <Marker position={[13.82956, 100.53206]} icon={customMarkerIcon}>
+              <Popup>บ้านเอื้องฟ้าอยู่ที่นี่ แวะมาทักทายกันได้ :)</Popup>
+            </Marker>
+          </MapContainer>
         </div>
       </div>
       <Loader type="pacman" />
     </>
   )
-  
 }
 
 export default Contact
