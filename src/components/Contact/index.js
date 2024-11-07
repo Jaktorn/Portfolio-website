@@ -34,7 +34,7 @@ const Contact = () => {
     e.preventDefault()
 
     emailjs
-      .sendForm('gmail', 'template_YeJhZkgb', form.current, 'your-token')
+      .sendForm('service_oinb22j', 'template_gty0t0g', form.current, 'OqvlLKh4r5aplJqrk')
       .then(
         () => {
           alert('Message successfully sent!')
@@ -44,6 +44,16 @@ const Contact = () => {
           alert('Failed to send the message, please try again')
         }
       )
+  }
+
+  // Function to open resume file
+  const openResume = () => {
+    window.location.href = 'https://drive.google.com/file/d/1JDXtUYm7afkwez4PdPSmXv73B-IkZDxa/view?usp=sharing'
+  }
+
+  // Function to open transcript file
+  const openTranscript = () => {
+    window.location.href = 'https://drive.google.com/file/d/1A5GU71a_pr3FaDziD-NsYnxyb7j622FC/view?usp=sharing'
   }
 
   return (
@@ -71,7 +81,6 @@ const Contact = () => {
                     required
                   />
                 </li>
-                
                 <li>
                   <textarea
                     placeholder="Message"
@@ -81,6 +90,16 @@ const Contact = () => {
                 </li>
                 <li>
                   <input type="submit" className="flat-button" value="SEND" />
+                </li>
+                <li>
+                  <a href="#" className="flat-button" onClick={openResume}>
+                    Open Resume
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="flat-button" onClick={openTranscript}>
+                    Open Transcript
+                  </a>
                 </li>
               </ul>
             </form>
