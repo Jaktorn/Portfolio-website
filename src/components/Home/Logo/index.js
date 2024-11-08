@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap-trial'
-import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin'
 import LogoJ from '../../../assets/images/logo-s.png'
 import './index.scss'
 
@@ -10,7 +9,10 @@ const Logo = () => {
   const solidLogoRef = useRef()
 
   useEffect(() => {
-    gsap.registerPlugin(DrawSVGPlugin)
+    // กำหนดค่าเริ่มต้นของ strokeDasharray และ strokeDashoffset
+    const outlineLength = outlineLogoRef.current.getTotalLength()
+    outlineLogoRef.current.style.strokeDasharray = outlineLength
+    outlineLogoRef.current.style.strokeDashoffset = outlineLength
 
     gsap
       .timeline()
@@ -18,13 +20,12 @@ const Logo = () => {
         duration: 1,
         opacity: 1,
       })
-      .from(outlineLogoRef.current, {
-        drawSVG: 0,
-        duration: 15, // ลดเวลาการวาดลง
-        ease: "power1.inOut" // เพิ่ม easing function ให้การวาดดูนุ่มนวลขึ้น
+      .to(outlineLogoRef.current, {
+        strokeDashoffset: 0, // ลดค่า strokeDashoffset ให้เป็น 0 เพื่อแสดงเส้นทั้งหมด
+        duration: 15, // เวลาที่ต้องการให้เส้นค่อยๆ วาดขึ้นมา
+        ease: "power1.inOut"
       })
 
-    // ปรับ delay ของ solid logo ให้แสดงหลังจากวาดเส้นไปแล้วประมาณ 80%
     gsap.fromTo(
       solidLogoRef.current,
       {
